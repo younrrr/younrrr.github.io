@@ -1,0 +1,234 @@
+@charset "utf-8";
+   @font-face{
+        font-family: colombo;
+        src: url('../fonts/Colombo Sans Font.otf'), 
+        url('../fonts/Colombo\ Sans\ Font.ttf') 
+        
+    }
+    @font-face {
+      font-family: Montserrat;
+      src: url('../fonts/LibreBaskerville-Regular.ttf'),
+     url('../fonts/LibreBaskerville-Bold.ttf'),
+     url('../fonts/LibreBaskerville-Italic.ttf');
+      
+    }
+    @font-face {
+      font-family: nexa;
+      src: url(../fonts/Nexa-Heavy.ttf),
+      url(../fonts/Nexa-ExtraLight.ttf);
+    }
+    @font-face {
+      font-family: roboto;
+      src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf),
+      url(../fonts/Roboto-Italic-VariableFont_wdth\,wght.ttf);
+    }
+ body {
+  
+   min-height: 80vh;
+  background:
+    radial-gradient(ellipse at top     left, rgb(63 86 127)  25% , transparent 100%), 
+    radial-gradient(ellipse at bottom  left, rgb(224 86 63)  13% , transparent 50%),
+    radial-gradient(ellipse at top    right, rgb(224 86 63) 9% , transparent 40%),
+    radial-gradient(ellipse at bottom right, rgb(65 38 83)  30% , transparent 120%),
+
+    radial-gradient(ellipse at center right, rgb(94, 48, 27) 20% , transparent 100% ),
+    radial-gradient(ellipse at center bottom, rgb(94, 48, 27) 20% , transparent 100% ),
+    radial-gradient(ellipse at center left, rgb(141, 85, 59) 9% , transparent 100% );
+    
+    background-attachment:fixed;
+  margin: 0;
+ }
+ 
+.navbar ul {
+
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  
+}
+.navbar a{
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  font-weight: nexa;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+
+.navbar a:hover {
+  color: rgb(199, 199, 199);
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px; 
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:  360ms cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+  background-color: rgb(255, 255, 255);
+  
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after,
+.navbar a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar a::after { transition: none; transform: scaleX(1); }
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+align-items: center;
+
+padding: 0 1rem;
+}
+
+.navcontainer {
+  position: absolute;  
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+
+.welcome { 
+  display: block;
+  color: rgb(0, 0, 0);
+  width: clamp(250px, 60vw, 600px);
+  margin: 0 auto;
+  padding-top: 18vh;  
+
+  box-sizing: border-box;
+  min-height: 75vh;
+}
+.text {
+  font-size: 5.3em;
+  letter-spacing: 10px;
+  font-family: serif, Times, serif;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.75s steps(15);
+  cursor: .4s step-end infinite ;
+ 
+}
+
+@keyframes cursor {
+  50% {  border-color: transparent}
+}
+@keyframes typing {
+  from { width: 0 }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  scroll-snap-type: mandatory;
+  overflow-y: scroll;
+}
+
+footer {
+  min-height:  5vh;
+  background-color: rgb(255, 254, 230);
+  
+  color: white;
+  font-family: nexa;
+  font-size: .7em;
+ color: black;
+ text-align: center;
+ top: 10px;
+ font-weight: 80;
+}
+
+
+
+
+.description1 {
+  opacity: 0;             
+  transform: translateY(100px);  
+  transition: opacity 1s ease, transform 1.5s ease;
+}
+
+
+.description1.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.symbol {
+  position: relative;
+  left: 50%;
+color: white;
+}
+
+
+.black-section {
+  background-color: black;
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+   display: flex;
+  justify-content: center; 
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-top: 6vh; 
+}
+
+.description1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 4em;
+  width: 65%;
+  max-width: 1250px;
+  border-radius: 10px;
+  padding-top: 20px;
+  height: auto; 
+}
+
+
+@media (max-width: 768px) {
+  .black-section {
+    padding-top: 5vh;
+  }
+  .description1 {
+    font-size: 2.5em;
+    width: 90%;
+  }
+}
+
+
+@media (min-height: 1300px) and (max-height: 1600px) {
+  .black-section {
+    padding-top: 12vh; 
+  }
+
+  .description1 {
+    font-size: 4.2em; 
+  }
+}
+
