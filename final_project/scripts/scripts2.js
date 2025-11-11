@@ -47,6 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     el.classList.remove("show");
     observer.observe(el);
   });
+  const rlElement = document.querySelector(".soccer, .map");
+  if (rlElement) {
+    rlElement.classList.remove("show");
+    rlObserver.observe(rlElement);
+  }
 
   
  
