@@ -390,7 +390,7 @@ opacity: 0;
 
 
   .soccer {position: absolute;
-    left: 84%;
+    left: 80%;
     top: 30%;
   width: 70vw;
   height: 40vh;
@@ -420,8 +420,8 @@ transition: opacity .7s ease-out, transform 1.2s ease;
 .map {
   box-shadow: inset;
    position: absolute;
-  left: 80%;
-  top: 41%;
+  left: 100%;
+  top: 37%;
   width: 30vw;
   height: 30vh;
   background-image: url("../images/FreeVectorBlack_And_WhiteBackgroundyc0123_generated.jpg");
